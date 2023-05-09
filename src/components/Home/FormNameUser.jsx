@@ -1,23 +1,25 @@
-import React from "react";
 import { useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setTrainerName } from "../../store/slices/trainerName.slice";
-
+import { useNavigate } from 'react-router-dom';
+import './FormNameUser.css'
 const FormNameUser = () => {
   
  const inputName = useRef();
 const dispatch = useDispatch()
-const { trainerName } = useSelector(state => state)
-
+const navigate = useNavigate()
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(setTrainerName(inputName.current.value.trim()))
+    navigate('/pokedex')
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input ref={inputName} type="text" />
-      <button>Start</button>
+    <form className='form' onSubmit={handleSubmit}>
+     <div>
+     <input className='form__input' ref={inputName} type="text" />
+      <button className='form__btn'>Start</button>
+     </div>
     </form>
   );
 };
