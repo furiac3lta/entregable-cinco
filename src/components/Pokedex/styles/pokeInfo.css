@@ -74,12 +74,13 @@
 }
 .pokemon__info__hr {
   border: 1;
-  width: 80px;
+  width: 80%;
   height: 1px;
   opacity: 0.5;
   background-color: #c9c4c4;
   position: relative;
-  top: 5px;
+  top: 12px;
+  
 }
 .pokemon__info__ul {
   display: grid;
@@ -99,6 +100,7 @@
 }
 .pokemon__info__br {
   display: flex;
+ 
 }
 .pokemon__info__name {
   font-size: 1.2em;
